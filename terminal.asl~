@@ -1,0 +1,15 @@
+// Agent Terminal in project Intelligent-Deporsitory.mas2j
+
+/* Initial beliefs and rules */
+
+/* Initial goals */
+
+!start.
+
+/* Planscas */
+
++!start : true <- .print("hello world.").
+				  +closed.
+				  
++closed : false <- .broadcast(tell, open).
+

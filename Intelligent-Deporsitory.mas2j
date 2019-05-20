@@ -1,0 +1,36 @@
+/*
+    intelligent-Deporsitory
+    ---------------------------
+
+    Jason Project File
+
+    This file defines the initial state of the MAS
+
+    Jason 
+    május 17, 2019 - 19:47:22
+*/
+
+MAS intelligentDeporsitory {
+
+    infrastructure: Centralised
+
+    environment: DepositoryEnvironment
+
+    agents:
+        emptyTruck
+		#3;
+
+        fullTruck
+		#3;
+
+        gate;
+		
+        selector;
+
+        terminal
+		#4;
+
+        selector_full;
+
+}
+

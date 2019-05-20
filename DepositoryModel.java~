@@ -1,0 +1,59 @@
+import jason.asSyntax.*;
+import jason.environment.*;
+import java.util.logging.*;
+import jason.environment.grid.*;
+import java.util.*;
+
+
+public class DepositoryModel extends GridWorldModel {
+	public DepositoryEnvironment env;
+	public DepositoryModel model;
+	
+	public DepositoryModel(DepositoryEnvironment e){
+		
+		super(12, 12, 13);
+		env = e;
+		env.ags = new ArrayList<Agent>();
+		String name;
+		//cars 
+		for(int i = 0;  i <6; i++){
+		setAgPos(i, i, 0);    //is, x, y
+		if(i % 2 == 0){
+			 name = "fullTruck" + i;
+		} else {
+			name = "emptyTruck" + i;
+		}
+		Agent a = new Agent(name, i+1);
+		env.ags.add(a);
+		
+		}
+		
+		//gate
+		setAgPos(6, 8, 2);
+		name = "gate";
+		env.ags.add(new Agent(name, 7));
+		
+		//selectors
+		setAgPos(7, 3, 5);
+		env.ags.add(new Agent("selector_full", 8));
+		
+		setAgPos(8, 8, 5);
+		env.ags.add(new Agent("selector", 9));
+		
+		//terminals
+		setAgPos(9, 0, 11);
+		env.ags.add(new Agent("terminal1", 10));
+		
+		setAgPos(10, 0, 9);
+		env.ags.add(new Agent("terminal2", 11));
+		
+		setAgPos(11, 11, 11);
+		env.ags.add(new Agent("terminal3", 12));
+		
+		setAgPos(12, 11, 9);
+		env.ags.add(new Agent("terminal4", 13));
+	}
+	
+	
+	
+}
