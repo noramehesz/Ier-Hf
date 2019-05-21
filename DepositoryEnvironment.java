@@ -20,7 +20,7 @@ public class DepositoryEnvironment extends Environment {
 	int sensor = 0;
 	List<Agent> trucksatgate = new ArrayList<Agent>();
 	boolean isin = false;	
-	boolean hasGUI   = true;
+	//boolean hasGUI   = true;
 	
 	public List<Agent> ags = new ArrayList<Agent>();
 
@@ -40,7 +40,7 @@ public class DepositoryEnvironment extends Environment {
     public void init(String[] args) {
 
 		 super.init(args);
-		 hasGUI = true;
+		 //hasGUI = true;
 		model = new DepositoryModel(this);
 		view = new DepositoryView(model, this);
 		model.setView(view);
@@ -97,7 +97,7 @@ public class DepositoryEnvironment extends Environment {
 							sensor++;
 						}
 						
-						if(sensor == 5 ){ 
+						if(sensor == 6 ){ 
 							
 							closed = false;
 							addPercept("terminal1", Literal.parseLiteral("open"));

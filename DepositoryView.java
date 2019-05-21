@@ -30,7 +30,8 @@ public class DepositoryView extends GridWorldView{
 	}
 	
 	public void redraw(){
-		repaint();
+		update(4, 11);
+		update(7, 11);
 	}
 	
 	/*@Override
@@ -67,7 +68,7 @@ public class DepositoryView extends GridWorldView{
 				
 					g.setColor(Color.BLUE);
 				name = "open";
-				repaint();
+				//repaint();
 			}
 			
 			if(env.ags.get(id).getName().equals("selector") ||env.ags.get(id).getName().equals("selector_full") ){

@@ -29,6 +29,10 @@ public class DepositoryView extends GridWorldView{
 		repaint();
 	}
 	
+	public void redraw(){
+		repaint();
+	}
+	
 	/*@Override
 	public void draw(Graphics g, int x, int y, int object) {
 		for(int i = 0; i < env.ags.size(); i++){
@@ -59,9 +63,11 @@ public class DepositoryView extends GridWorldView{
 				name = "open";
 			} 
 			
-			if(!env.closed && env.ags.get(id).getName().substring(0,4).equals("ter")){
-				g.setColor(Color.BLUE);
+			if( env.closed == false &&  env.ags.get(id).getName().startsWith("terminal") ){  //env.ags.get(id).getName().substring(0,8).equals("terminal")){
+				
+					g.setColor(Color.BLUE);
 				name = "open";
+				repaint();
 			}
 			
 			if(env.ags.get(id).getName().equals("selector") ||env.ags.get(id).getName().equals("selector_full") ){
@@ -87,6 +93,8 @@ public class DepositoryView extends GridWorldView{
 		g.fillRect(x * cellSizeW + 1, y * cellSizeH+1, cellSizeW-1, cellSizeH-1);
 		g.setColor(Color.WHITE);
 		drawString(g, x, y, defaultFont, name); 
+		
+	
 		}
 				
 	
